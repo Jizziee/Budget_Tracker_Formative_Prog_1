@@ -1,15 +1,15 @@
-
-# Day 4
 from budget_tracker import BudgetTracker
 
 bt = BudgetTracker()
 
 while True:
-    print("\n--- Budget Tracker ---")
+    print("\n=== Budget Tracker Menu ===")
     print("1. Add Income")
     print("2. Add Expense")
-    print("3. View Summary")
-    print("4. Exit")
+    print("3. List Transactions")
+    print("4. Filter Transactions")
+    print("5. Show Summary")
+    print("0. Exit")
 
     choice = input("Enter choice: ")
 
@@ -18,11 +18,13 @@ while True:
     elif choice == "2":
         bt.add_expense()
     elif choice == "3":
-        for t in bt.transactions:
-            print(t)
+        bt.list_transactions()
     elif choice == "4":
-        print("Goodbye!")
+        bt.filter_transactions()
+    elif choice == "5":
+        bt.show_summary()
+    elif choice == "0":
+        print("Goodbye! See you soon!")
         break
     else:
         print("Invalid option!")
-
