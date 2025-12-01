@@ -2,7 +2,7 @@
 
 This repository will contain a simple command-line Budget Tracker written in Python.
 
-Day 1: Initial setup with starter files and a working main.py.
+Day 1: Initial setup with starter files e.g: transaction.py, budget_tracker.py and a working main.py by testing print statement.
 
 Day 2:
 - Practiced running the project from both PyCharm and the command line. 

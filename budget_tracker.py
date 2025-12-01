@@ -45,11 +45,11 @@ class BudgetTracker:
         try:
             amount = float(amount)
         except ValueError:
-            print("❌ Invalid amount! Must be a number.")
+            print(" Invalid amount! Must be a number.")
             return
 
         if category.strip() == "":
-            print("❌ Category cannot be empty.")
+            print(" Category cannot be empty.")
             return
 
         expense = Expense(date, amount, category, description)
