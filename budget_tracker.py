@@ -104,23 +104,33 @@ class BudgetTracker:
     # Summary Report
     # ------------------------------
     def show_summary(self):
-        print("\n--- Summary ---")
+        def show_summary(self):
+            print("\n--- Summary ---")
 
-        total_income = sum(t.amount for t in self.transactions if t.type == "income")
-        total_expense = sum(t.amount for t in self.transactions if t.type == "expense")
-        balance = total_income - total_expense
+            total_income = sum(t.amount for t in self.transactions if t.type == "income")
+            total_expense = sum(t.amount for t in self.transactions if t.type == "expense")
+            balance = total_income - total_expense
 
-        print(f"Total Income: {total_income}")
-        print(f"Total Expense: {total_expense}")
-        print(f"Balance: {balance}")
+            print(f"Total Income: {total_income}")
+            print(f"Total Expense: {total_expense}")
+            print(f"Balance: {balance}")
 
-        print("\nPer-Category Totals:")
-        category_totals = {}
+            print("\nPer-Category Totals:")
+            category_totals = {}
 
-        for t in self.transactions:
-            if t.category not in category_totals:
-                category_totals[t.category] = 0
-            category_totals[t.category] += t.amount
+            for t in self.transactions:
+                if t.category not in category_totals:
+                    category_totals[t.category] = 0
+                category_totals[t.category] += t.amount
 
-        for cat, amt in category_totals.items():
-            print(f"{cat.title()}: {amt}")
+            # This loop must end BEFORE printing All Transactions
+            for cat, amt in category_totals.items():
+                print(f"{cat.title()}: {amt}")
+
+            # -------------------------------------
+            # Now list ALL transactions (correct)
+            # -------------------------------------
+            print("\nAll Transactions:")
+            for t in self.transactions:
+                print(t)
+
