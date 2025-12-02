@@ -17,7 +17,7 @@ Day 3:
 
 
 
-Budget Tracker – Command Line Project
+                                            Budget Tracker 
 
 This project is a simple command-line budget tracker written in Python.
 It allows a user to record income and expenses, view all transactions, filter them, and see a financial summary.
@@ -110,6 +110,4 @@ filter_category.png
 
 summary.png
 
-7. Project Status
-
-All core features have been implemented successfully, and the project is fully functional in the terminal.
+7. Project Status : All core features have been implemented successfully, and the project is fully functional in the terminal.

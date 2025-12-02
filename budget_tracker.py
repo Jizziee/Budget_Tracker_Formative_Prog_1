@@ -5,60 +5,75 @@ class BudgetTracker:
     def __init__(self):
         self.transactions = []
 
-    # ------------------------------
     # Add Income
-    # ------------------------------
     def add_income(self):
         print("\n--- Add Income ---")
 
-        date = input("Enter date (YYYY-MM-DD): ")
-        amount = input("Enter amount: ")
-        category = input("Enter category: ")
-        description = input("Enter description: ")
+        date = input("Enter date (YYYY-MM-DD): ").strip()
 
-        # Validation
-        try:
-            amount = float(amount)
-        except ValueError:
-            print("❌ Invalid amount! Must be a number.")
+        # Loop until user enters a valid positive amount
+        while True:
+            amount_input = input("Enter amount: ").strip()
+
+            try:
+                amount = float(amount_input)
+            except ValueError:
+                print(" Invalid amount! Must be a number.")
+                continue
+
+            if amount <= 0:
+                print(" Amount must be a positive number. Please try again.")
+                continue
+
+            break  # valid amount, exit loop
+
+        category = input("Enter category: ").strip()
+        if category == "":
+            print(" Category cannot be empty.")
             return
 
-        if category.strip() == "":
-            print("❌ Category cannot be empty.")
-            return
+        description = input("Enter description: ").strip()
 
         income = Income(date, amount, category, description)
         self.transactions.append(income)
         print("✔ Income added successfully!")
 
-    # ------------------------------
     # Add Expense
-    # ------------------------------
     def add_expense(self):
         print("\n--- Add Expense ---")
 
-        date = input("Enter date (YYYY-MM-DD): ")
-        amount = input("Enter amount: ")
-        category = input("Enter category: ")
-        description = input("Enter description: ")
+        date = input("Enter date (YYYY-MM-DD): ").strip()
 
-        try:
-            amount = float(amount)
-        except ValueError:
-            print(" Invalid amount! Must be a number.")
-            return
+        # Loop until user enters a valid positive amount
+        while True:
+            amount_input = input("Enter amount: ").strip()
 
-        if category.strip() == "":
+            try:
+                amount = float(amount_input)
+            except ValueError:
+                print(" Invalid amount! Must be a number.")
+                continue
+
+            if amount <= 0:
+                print(" Amount must be a positive number. Please try again.")
+                continue
+
+            break  # valid amount
+
+        category = input("Enter category: ").strip()
+        if category == "":
             print(" Category cannot be empty.")
             return
+
+        description = input("Enter description: ").strip()
 
         expense = Expense(date, amount, category, description)
         self.transactions.append(expense)
         print("✔ Expense added successfully!")
 
-    # ------------------------------
-    # List All Transactions
-    # ------------------------------
+
+    # Listing All Transactions
+
     def list_transactions(self):
         print("\n--- All Transactions ---")
         if not self.transactions:
@@ -67,9 +82,9 @@ class BudgetTracker:
         for t in self.transactions:
             print(t)
 
-    # ------------------------------
-    # Filter Transactions
-    # ------------------------------
+
+    # Code that I use to Filter Transactions
+
     def filter_transactions(self):
         print("\n--- Filter Options ---")
         print("1. By Type (income/expense)")
@@ -100,9 +115,9 @@ class BudgetTracker:
             for r in results:
                 print(r)
 
-    # ------------------------------
-    # Summary Report
-    # ------------------------------
+
+    # Code for Summary Report
+
     def show_summary(self):
         def show_summary(self):
             print("\n--- Summary ---")
@@ -123,13 +138,13 @@ class BudgetTracker:
                     category_totals[t.category] = 0
                 category_totals[t.category] += t.amount
 
-            # This loop must end BEFORE printing All Transactions
+            # This loop must end BEFORE printing All Transactions, otherwise my code will duplicate some info
             for cat, amt in category_totals.items():
                 print(f"{cat.title()}: {amt}")
 
-            # -------------------------------------
-            # Now list ALL transactions (correct)
-            # -------------------------------------
+
+            # Code for listing ALL transactions - as individuals :)
+
             print("\nAll Transactions:")
             for t in self.transactions:
                 print(t)
