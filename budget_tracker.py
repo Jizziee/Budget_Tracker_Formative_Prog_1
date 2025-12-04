@@ -157,3 +157,34 @@ class BudgetTracker:
             for t in self.transactions:
                 print(t)
 
+    # Delete Transaction
+    def delete_transaction(self):
+        print("\n--- Delete a Transaction ---")
+
+        if not self.transactions:
+            print("No transactions available to delete.")
+            return
+
+        # Show list with numbers
+        print("\nList of Transactions:")
+        for i, t in enumerate(self.transactions, start=1):
+            print(f"{i}. {t.date} - {t.category} - {t.amount} - {t.description}")
+
+        # Ask which one to delete
+        choice = input("\nEnter the number of the transaction to delete: ").strip()
+
+        # Validate input
+        if not choice.isdigit():
+            print("Invalid input! Please enter a number.")
+            return
+
+        choice = int(choice)
+
+        if choice < 1 or choice > len(self.transactions):
+            print("Number out of range!")
+            return
+
+        # Delete
+        deleted = self.transactions.pop(choice - 1)
+        print(f"✔ Deleted: {deleted.category} - {deleted.amount} on {deleted.date}")
+

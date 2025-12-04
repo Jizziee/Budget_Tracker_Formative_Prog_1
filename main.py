@@ -9,6 +9,7 @@ while True:
     print("3. List Transactions")
     print("4. Filter Transactions")
     print("5. Show Summary")
+    print("6. Delete a Transaction")
     print("0. Exit")
 
     choice = input("Enter choice: ")
@@ -23,6 +24,8 @@ while True:
         bt.filter_transactions()
     elif choice == "5":
         bt.show_summary()
+    elif choice == "6":
+        bt.delete_transaction()
     elif choice == "0":
         print("Goodbye! See you soon!")
         break
