@@ -154,6 +154,7 @@ Example of deleting a transaction:
                  ├── budget_tracker.py  - Contains main program (All of the logic)
                  ├── transaction.py  - Contains Transaction, Income, and Expense classes
                  ├── README.md   - Project documentation, Screenshots and refelction links
+
 ## 7. Reflection + Screenshots Link
 To access the screenshots please visit this link: https://docs.google.com/document/d/1G6NLpizE8yUi1684sDQXjW8fGcP4Jk1rt5sI6gtwYqs/edit?tab=t.0#heading=h.rflrvfgijb14 
 
