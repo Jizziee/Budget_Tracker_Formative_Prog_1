@@ -127,7 +127,6 @@ class BudgetTracker:
     # Code for Summary Report
 
     def show_summary(self):
-        def show_summary(self):
             print("\n--- Summary ---")
 
             total_income = sum(t.amount for t in self.transactions if t.type == "income")

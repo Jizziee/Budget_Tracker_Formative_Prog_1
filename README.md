@@ -54,7 +54,7 @@ I followed a day-by-day plan to build the project gradually (classes first, feat
 #### Delete a transaction
 - Transaction list shown with numbers
 
-- nUser chooses a number to delete
+- User chooses a number to delete
 
 - Validates incorrect inputs and out-of-range numbers
 
@@ -150,13 +150,13 @@ Example of deleting a transaction:
 
      BudgetTracker/
                  │
-                 ├── main.py
-                 ├── budget_tracker.py
+                 ├── main.py - 
+                 ├── budget_tracker.py - Contains main program (All of logic)
                  ├── transaction.py
                  ├── README.md
-                 ├── reflection.txt
-                 └── repository_link.txt
+## 7. Reflection + Screenshots Link
+To access the screenshots please visit this link: https://docs.google.com/document/d/1G6NLpizE8yUi1684sDQXjW8fGcP4Jk1rt5sI6gtwYqs/edit?tab=t.0#heading=h.rflrvfgijb14 
+To access reflection please vist this link: https://docs.google.com/document/d/1G6NLpizE8yUi1684sDQXjW8fGcP4Jk1rt5sI6gtwYqs/edit?tab=t.bfmpmbnqydc0
 
-
-## 7. Project Status 
+## 8. Project Status 
 All core features have been implemented successfully, and the project is fully functional in the terminal.
